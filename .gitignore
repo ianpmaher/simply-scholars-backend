@@ -174,3 +174,7 @@ typings/
 
 .DS_Store
 .idea
+
+# from https://docs.strapi.io/dev-docs/deployment/heroku
+# path: ./.gitignore
+# package-lock.json
