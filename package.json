@@ -15,6 +15,7 @@
     "@strapi/plugin-users-permissions": "4.15.5",
     "@strapi/strapi": "4.15.5",
     "better-sqlite3": "8.6.0",
+    "npm": "^10.2.5",
     "pg": "^8.11.3",
     "pg-connection-string": "^2.6.2",
     "react": "^18.0.0",
@@ -29,8 +30,8 @@
     "uuid": "d2491999-57d1-481b-9ce1-062d474fa1f7"
   },
   "engines": {
-    "node": ">=18.0.0 <=20.x.x",
-    "npm": ">=6.0.0"
+    "node": "21.4.0",
+    "npm": "10.2.4"
   },
   "license": "MIT"
 }
