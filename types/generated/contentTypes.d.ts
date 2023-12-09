@@ -367,32 +367,35 @@ export interface ApiScholarshipScholarship extends Schema.CollectionType {
   info: {
     singularName: 'scholarship';
     pluralName: 'scholarships';
-    displayName: 'Scholarship';
+    displayName: 'scholarships';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String &
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 1;
+      }> &
+      Attribute.DefaultTo<'scholarshipName'>;
+    description: Attribute.RichText &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 1;
       }>;
-    Description: Attribute.Blocks & Attribute.Required;
-    Deadline: Attribute.Date;
     isActive: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<true>;
-    Value: Attribute.Integer &
-      Attribute.SetMinMax<{
-        min: 1;
-        max: 30000;
-      }>;
-    slug: Attribute.UID<'api::scholarship.scholarship', 'Title'>;
-    contactInfo: Attribute.Blocks;
+    deadline: Attribute.Date & Attribute.Required;
+    value: Attribute.Integer;
     pic: Attribute.Media;
-    app: Attribute.Media;
+    pdf: Attribute.Media;
+    slug: Attribute.UID<'api::scholarship.scholarship', 'title'>;
+    eligibility: Attribute.Enumeration<
+      ['Merit-Based', 'Needs-Based', 'Merit- & Needs-Based', 'Other']
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
