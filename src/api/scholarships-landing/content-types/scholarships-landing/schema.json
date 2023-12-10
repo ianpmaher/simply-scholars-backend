@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "scholarships_landings",
+  "info": {
+    "singularName": "scholarships-landing",
+    "pluralName": "scholarships-landings",
+    "displayName": "Scholarships Landing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "scholarships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::scholarship.scholarship"
+    }
+  }
+}
