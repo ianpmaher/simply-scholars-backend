@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blog_titles",
+  "info": {
+    "displayName": "title",
+    "icon": "crop"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "blog title",
+      "required": true
+    },
+    "blogcontent": {
+      "type": "richtext",
+      "default": "blogcontent"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_scholarship_scholarship_types",
+  "info": {
+    "displayName": "scholarship-type",
+    "icon": "hashtag"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "scholarshipName"
+    },
+    "description": {
+      "type": "richtext",
+      "default": "scholarship description"
+    },
+    "deadline": {
+      "type": "date",
+      "default": "2024-12-01"
+    },
+    "color": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    },
+    "value": {
+      "type": "integer"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

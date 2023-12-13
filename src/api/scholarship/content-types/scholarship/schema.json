@@ -20,34 +20,37 @@
     },
     "description": {
       "type": "richtext",
-      "minLength": 1,
-      "required": true
+      "required": false,
+      "default": "transcript"
     },
     "isActive": {
       "type": "boolean",
       "default": true,
-      "required": true
+      "required": false
     },
     "deadline": {
       "type": "date",
-      "required": true
+      "required": false,
+      "default": "2024-12-31"
     },
     "value": {
       "type": "integer"
     },
     "pic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "pdf": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "slug": {
       "type": "uid",
