@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_scholarship_form_backgrounds",
+  "info": {
+    "displayName": "background"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "required": true,
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

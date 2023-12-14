@@ -14,23 +14,64 @@ export interface BlogTitle extends Schema.Component {
   };
 }
 
-export interface ScholarshipScholarshipType extends Schema.Component {
-  collectionName: 'components_scholarship_scholarship_types';
+export interface ScholarshipFormBackground extends Schema.Component {
+  collectionName: 'components_scholarship_form_backgrounds';
   info: {
-    displayName: 'scholarship-type';
-    icon: 'hashtag';
+    displayName: 'background';
   };
   attributes: {
-    title: Attribute.String &
+    backgroundColor: Attribute.String &
       Attribute.Required &
-      Attribute.DefaultTo<'scholarshipName'>;
-    description: Attribute.RichText &
-      Attribute.DefaultTo<'scholarship description'>;
-    deadline: Attribute.Date & Attribute.DefaultTo<'2024-12-01'>;
-    color: Attribute.String &
       Attribute.CustomField<'plugin::color-picker.color'>;
-    value: Attribute.Integer;
-    isActive: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
+export interface ScholarshipFormDeadline extends Schema.Component {
+  collectionName: 'components_scholarship_form_deadlines';
+  info: {
+    displayName: 'deadline';
+    icon: 'globe';
+  };
+  attributes: {
+    deadline: Attribute.Date &
+      Attribute.Required &
+      Attribute.DefaultTo<'2024-12-31'>;
+  };
+}
+
+export interface ScholarshipFormDescription extends Schema.Component {
+  collectionName: 'components_scholarship_form_descriptions';
+  info: {
+    displayName: 'description';
+    icon: 'cup';
+  };
+  attributes: {
+    description: Attribute.RichText &
+      Attribute.DefaultTo<'scholarship details'>;
+  };
+}
+
+export interface ScholarshipFormPic extends Schema.Component {
+  collectionName: 'components_scholarship_form_pics';
+  info: {
+    displayName: 'pic';
+    icon: 'landscape';
+  };
+  attributes: {
+    pic: Attribute.Media;
+    hasPic: Attribute.Boolean & Attribute.Required & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ScholarshipFormTitle extends Schema.Component {
+  collectionName: 'components_scholarship_form_titles';
+  info: {
+    displayName: 'title';
+    icon: 'earth';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
   };
 }
 
@@ -38,7 +79,11 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'blog.title': BlogTitle;
-      'scholarship.scholarship-type': ScholarshipScholarshipType;
+      'scholarship-form.background': ScholarshipFormBackground;
+      'scholarship-form.deadline': ScholarshipFormDeadline;
+      'scholarship-form.description': ScholarshipFormDescription;
+      'scholarship-form.pic': ScholarshipFormPic;
+      'scholarship-form.title': ScholarshipFormTitle;
     }
   }
 }

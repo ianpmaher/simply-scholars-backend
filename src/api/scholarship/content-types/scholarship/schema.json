@@ -12,37 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true,
-      "minLength": 1,
-      "default": "scholarshipName"
-    },
-    "description": {
-      "type": "richtext",
-      "required": false,
-      "default": "transcript"
-    },
     "isActive": {
       "type": "boolean",
       "default": true,
       "required": false
     },
-    "deadline": {
-      "type": "date",
-      "required": false,
-      "default": "2024-12-31"
-    },
     "value": {
       "type": "integer"
-    },
-    "pic": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
     },
     "pdf": {
       "type": "media",
@@ -53,8 +29,7 @@
       ]
     },
     "slug": {
-      "type": "uid",
-      "targetField": "title"
+      "type": "uid"
     },
     "eligibility": {
       "type": "enumeration",
@@ -64,6 +39,28 @@
         "Merit- & Needs-Based",
         "Other"
       ]
+    },
+    "hasPic": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasPdf": {
+      "type": "boolean"
+    },
+    "scholarshipContent": {
+      "type": "dynamiczone",
+      "components": [
+        "scholarship-form.title",
+        "scholarship-form.description",
+        "scholarship-form.pic",
+        "scholarship-form.background",
+        "scholarship-form.deadline"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "name"
     }
   }
 }
