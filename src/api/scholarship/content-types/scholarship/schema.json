@@ -57,10 +57,17 @@
         "scholarship-form.deadline"
       ]
     },
-    "name": {
+    "title": {
       "type": "string",
       "required": true,
       "default": "name"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "deadline": {
+      "type": "date",
+      "default": "2024-12-31"
     }
   }
 }

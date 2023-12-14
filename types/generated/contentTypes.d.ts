@@ -392,7 +392,9 @@ export interface ApiScholarshipScholarship extends Schema.CollectionType {
         'scholarship-form.deadline'
       ]
     >;
-    name: Attribute.String & Attribute.Required & Attribute.DefaultTo<'name'>;
+    title: Attribute.String & Attribute.Required & Attribute.DefaultTo<'name'>;
+    description: Attribute.RichText;
+    deadline: Attribute.Date & Attribute.DefaultTo<'2024-12-31'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
