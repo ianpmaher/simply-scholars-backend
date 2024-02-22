@@ -367,34 +367,21 @@ export interface ApiScholarshipScholarship extends Schema.CollectionType {
   info: {
     singularName: 'scholarship';
     pluralName: 'scholarships';
-    displayName: 'scholarships';
-    description: '';
+    displayName: 'scholarship';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    isActive: Attribute.Boolean & Attribute.DefaultTo<true>;
-    value: Attribute.Integer;
-    pdf: Attribute.Media;
-    slug: Attribute.UID;
-    eligibility: Attribute.Enumeration<
-      ['Merit-Based', 'Needs-Based', 'Merit- & Needs-Based', 'Other']
-    >;
-    hasPic: Attribute.Boolean & Attribute.DefaultTo<false>;
-    hasPdf: Attribute.Boolean;
-    scholarshipContent: Attribute.DynamicZone<
-      [
-        'scholarship-form.title',
-        'scholarship-form.description',
-        'scholarship-form.pic',
-        'scholarship-form.background',
-        'scholarship-form.deadline'
-      ]
-    >;
-    title: Attribute.String & Attribute.Required & Attribute.DefaultTo<'name'>;
+    title: Attribute.String & Attribute.Required;
     description: Attribute.RichText;
-    deadline: Attribute.Date & Attribute.DefaultTo<'2024-12-31'>;
+    value: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<500>;
+    color: Attribute.String &
+      Attribute.CustomField<'plugin::color-picker.color'>;
+    deadline: Attribute.Date &
+      Attribute.Required &
+      Attribute.DefaultTo<'2025-01-01'>;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -428,11 +415,6 @@ export interface ApiScholarshipsLandingScholarshipsLanding
     draftAndPublish: true;
   };
   attributes: {
-    scholarships: Attribute.Relation<
-      'api::scholarships-landing.scholarships-landing',
-      'oneToMany',
-      'api::scholarship.scholarship'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
