@@ -410,11 +410,17 @@ export interface ApiScholarshipsLandingScholarshipsLanding
     singularName: 'scholarships-landing';
     pluralName: 'scholarships-landings';
     displayName: 'Scholarships Landing';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    scholarships: Attribute.Relation<
+      'api::scholarships-landing.scholarships-landing',
+      'oneToMany',
+      'api::scholarship.scholarship'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
